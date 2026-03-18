@@ -121,26 +121,26 @@ export default function Todo() {
     }
 
     return <>
-        <div className="row p-3 bg-success text-light">
-            <h1 className="con">ToDo Project with MERN stack</h1>
+        <div className="row p-3" style={{background: "black", color: "white"}}>
+            <h1 className="con">ToDo Project</h1>
         </div>
-        <div className="row">
+        <div className="row p-3 " style={{background: "#181818", color: "white"}}>
             <h3 className="con">Add Item</h3>
             {message && <p className="text-success">{message}</p>}
-            <div className="form-group d-flex gap-2">
+            <div className="form-group d-flex gap-2 col-md-6">
                 <input placeholder="Title" onChange={(e) => setTitle(e.target.value)} value={title} className="form-control" type="text" />
                 <input placeholder="Description" onChange={(e) => setDesciption(e.target.value)} value={description} className="form-control" type="text" />
-                <button className="btn btn-dark" onClick={handleSubmit}>Submit</button>
+                <button className="btn btn-dark" style={{borderColor:'white'}} onClick={handleSubmit}>Submit</button>
             </div>
            {error && <p className="text-danger">{error}</p>}
         </div>
-        <div className="row mt-3">
+        <div className="row p-3" style={{background: "#2C2C2C", color: "white"}}>
             <h3 className="con">Tasks</h3>
             <div className="col-md-6">
 
                 <ul className="list-group">
                     { 
-                    todos.map((item) =>  <li className="list-group-item bg-info d-flex justify-content-between align-items-center my-2">
+                    todos.map((item) =>  <li className="list-group-item bg-light d-flex justify-content-between align-items-center my-2">
                     <div className="d-flex flex-column me-2">
                         {
                             editId == -1 || editId !==  item._id ? <>
